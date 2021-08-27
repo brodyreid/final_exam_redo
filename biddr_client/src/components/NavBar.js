@@ -1,6 +1,7 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { Session } from '../requests';
+import { Nav, Navbar, Container } from 'react-bootstrap';
 
 const NavBar = ({ currentUser, onSignOut }) => {
     const handleSignOut = () => {
@@ -9,7 +10,9 @@ const NavBar = ({ currentUser, onSignOut }) => {
         })
     }
     return(
-    <nav>
+    <Navbar bg="light">
+        <Container>
+        <Nav>
         <NavLink to='/'>Home</NavLink>
         |
         <NavLink to='/auctions'>Auctions Index</NavLink>
@@ -30,7 +33,9 @@ const NavBar = ({ currentUser, onSignOut }) => {
             </>
         )
     }
-    </nav>
+    </Nav>
+    </Container>
+    </Navbar>
     )
 }
 

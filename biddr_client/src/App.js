@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import WelcomePage from './components/WelcomePage';
 import AuctionIndexPage from './components/AuctionIndexPage';
+import SignInPage from './components/SignInPage';
 import NavBar from './components/NavBar';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Session } from './requests';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 
 class App extends Component {
@@ -35,6 +37,7 @@ class App extends Component {
                     <NavBar />
                     <Switch>
                         <Route exact path="/" component={WelcomePage}/>
+                        <Route exact path="/sign_in" component={SignInPage} />
                         <Route exact path="/auctions">
                             <AuctionIndexPage />
                         </Route>

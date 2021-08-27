@@ -603,3 +603,173 @@ Processing by Api::V1::AuctionsController#index as JSON
 Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.8ms | Allocations: 2170)
 
 
+Started POST "/api/v1/session" for ::1 at 2021-08-27 14:51:46 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"js@winterfell.gov", "password"=>"[FILTERED]", "session"=>{"email"=>"js@winterfell.gov", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "js@winterfell.gov"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3:in `create'
+Completed 200 OK in 196ms (Views: 0.2ms | ActiveRecord: 4.8ms | Allocations: 8489)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 14:51:51 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (1.1ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 22ms (Views: 8.8ms | ActiveRecord: 6.8ms | Allocations: 8091)
+
+
+Started POST "/api/v1/session" for ::1 at 2021-08-27 14:55:21 -0400
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 14:55:21 -0400
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"js@winterfell.gov", "password"=>"[FILTERED]", "session"=>{"email"=>"js@winterfell.gov", "password"=>"[FILTERED]"}}
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mUser Load (6.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "js@winterfell.gov"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3:in `create'
+Completed 200 OK in 245ms (Views: 0.2ms | ActiveRecord: 6.3ms | Allocations: 1528)
+
+
+  [1m[36mAuction Load (1.2ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 265ms (Views: 2.2ms | ActiveRecord: 16.1ms | Allocations: 6728)
+
+
+Started POST "/api/v1/session" for ::1 at 2021-08-27 14:55:45 -0400
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"js@winterfell.gov", "password"=>"[FILTERED]", "session"=>{"email"=>"js@winterfell.gov", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "js@winterfell.gov"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3:in `create'
+Completed 200 OK in 188ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 1155)
+
+
+Started POST "/api/v1/session" for ::1 at 2021-08-27 14:55:49 -0400
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"js@winterfell.gov", "password"=>"[FILTERED]", "session"=>{"email"=>"js@winterfell.gov", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (13.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "js@winterfell.gov"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3:in `create'
+Completed 200 OK in 205ms (Views: 0.2ms | ActiveRecord: 13.0ms | Allocations: 971)
+
+
+Started POST "/api/v1/session" for ::1 at 2021-08-27 15:04:03 -0400
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"js@winterfell.gov", "password"=>"[FILTERED]", "session"=>{"email"=>"js@winterfell.gov", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "js@winterfell.gov"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3:in `create'
+Completed 200 OK in 232ms (Views: 0.2ms | ActiveRecord: 9.1ms | Allocations: 4070)
+
+
+Started POST "/api/v1/session" for ::1 at 2021-08-27 15:04:05 -0400
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"js@winterfell.gov", "password"=>"[FILTERED]", "session"=>{"email"=>"js@winterfell.gov", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "js@winterfell.gov"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3:in `create'
+Completed 200 OK in 194ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 971)
+
+
+Started POST "/api/v1/session" for ::1 at 2021-08-27 15:04:32 -0400
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"js@winterfell.gov", "password"=>"[FILTERED]", "session"=>{"email"=>"js@winterfell.gov", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "js@winterfell.gov"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3:in `create'
+Completed 200 OK in 193ms (Views: 0.1ms | ActiveRecord: 1.8ms | Allocations: 971)
+
+
+Started POST "/api/v1/session" for ::1 at 2021-08-27 15:05:16 -0400
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"js@winterfell.gov", "password"=>"[FILTERED]", "session"=>{"email"=>"js@winterfell.gov", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "js@winterfell.gov"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3:in `create'
+Completed 200 OK in 190ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 973)
+
+
+Started POST "/api/v1/session" for ::1 at 2021-08-27 15:05:21 -0400
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"js@winterfell.gov", "password"=>"[FILTERED]", "session"=>{"email"=>"js@winterfell.gov", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "js@winterfell.gov"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3:in `create'
+Completed 200 OK in 199ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 971)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 15:11:25 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (1.0ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 18ms (Views: 2.9ms | ActiveRecord: 9.0ms | Allocations: 5186)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 15:14:36 -0400
+Started POST "/api/v1/session" for ::1 at 2021-08-27 15:14:36 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"js@winterfell.gov", "password"=>"[FILTERED]", "session"=>{"email"=>"js@winterfell.gov", "password"=>"[FILTERED]"}}
+  [1m[36mAuction Load (0.8ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.8ms | Allocations: 2519)
+
+
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "js@winterfell.gov"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3:in `create'
+Completed 200 OK in 208ms (Views: 0.2ms | ActiveRecord: 8.7ms | Allocations: 6658)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 15:14:39 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (1.3ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 1.3ms | Allocations: 2233)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 15:26:12 -0400
+Started POST "/api/v1/session" for ::1 at 2021-08-27 15:26:12 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"js@winterfell.gov", "password"=>"[FILTERED]", "session"=>{"email"=>"js@winterfell.gov", "password"=>"[FILTERED]"}}
+  [1m[36mAuction Load (2.2ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 42ms (Views: 3.9ms | ActiveRecord: 27.4ms | Allocations: 8801)
+
+
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "js@winterfell.gov"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3:in `create'
+Completed 200 OK in 232ms (Views: 0.1ms | ActiveRecord: 12.6ms | Allocations: 9198)
+
+
+Started POST "/api/v1/session" for ::1 at 2021-08-27 15:26:20 -0400
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 15:26:20 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"js@winterfell.gov", "password"=>"[FILTERED]", "session"=>{"email"=>"js@winterfell.gov", "password"=>"[FILTERED]"}}
+  [1m[36mAuction Load (2.1ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 17ms (Views: 3.1ms | ActiveRecord: 2.1ms | Allocations: 2762)
+
+
+  [1m[36mUser Load (11.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "js@winterfell.gov"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3:in `create'
+Completed 200 OK in 256ms (Views: 0.1ms | ActiveRecord: 11.4ms | Allocations: 3560)
+
+
+Started POST "/api/v1/session" for ::1 at 2021-08-27 15:27:11 -0400
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"js@winterfell.gov", "password"=>"[FILTERED]", "session"=>{"email"=>"js@winterfell.gov", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "js@winterfell.gov"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3:in `create'
+Completed 200 OK in 196ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 972)
+
+
+Started POST "/api/v1/session" for ::1 at 2021-08-27 15:27:18 -0400
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"js@winterfell.gov", "password"=>"[FILTERED]", "session"=>{"email"=>"js@winterfell.gov", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "js@winterfell.gov"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3:in `create'
+Completed 200 OK in 199ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 971)
+
+
+Started POST "/api/v1/session" for ::1 at 2021-08-27 15:27:19 -0400
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"js@winterfell.gov", "password"=>"[FILTERED]", "session"=>{"email"=>"js@winterfell.gov", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "js@winterfell.gov"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3:in `create'
+Completed 200 OK in 192ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 971)
+
+
