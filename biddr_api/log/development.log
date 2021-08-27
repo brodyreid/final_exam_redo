@@ -1,0 +1,212 @@
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (24.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "biddr_api_development"[0m
+  [1m[35m (19.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "biddr_api_test"[0m
+  [1m[35m (59.6ms)[0m  [1m[35mCREATE DATABASE "biddr_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (59.7ms)[0m  [1m[35mCREATE DATABASE "biddr_api_test" ENCODING = 'unicode'[0m
+  [1m[35m (3.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8427587142396744315)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateAuctions (20210824171028)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCREATE TABLE "auctions" ("id" bigserial primary key, "title" character varying, "description" text, "end_date" date, "reserve_price" integer, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210824171028"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBids (20210824175247)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "bids" ("id" bigserial primary key, "amount" integer, "auction_id" bigint NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, CONSTRAINT "fk_rails_7332d1a025"
+FOREIGN KEY ("auction_id")
+  REFERENCES "auctions" ("id")
+)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE INDEX "index_bids_on_auction_id" ON "bids" ("auction_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210824175247"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20210824185930)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying, "password_digest" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210824185930"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserReferencesToAuctions (20210824192057)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "auctions" ADD "user_id" bigint[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCREATE INDEX "index_auctions_on_user_id" ON "auctions" ("user_id")[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "auctions" ADD CONSTRAINT "fk_rails_a21a834151"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210824192057"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddUserReferencesToBids (20210824192202)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "bids" ADD "user_id" bigint[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE INDEX "index_bids_on_user_id" ON "bids" ("user_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "bids" ADD CONSTRAINT "fk_rails_e173de2ed3"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210824192202"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-08-27 16:32:46.748532"], ["updated_at", "2021-08-27 16:32:46.748532"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8427587142396744315)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 12:34:31 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/auctions"):
+  
+Started GET "/" for ::1 at 2021-08-27 12:34:35 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/brodyreid/.rvm/gems/ruby-3.0.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/brodyreid/.rvm/gems/ruby-3.0.0/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 5.9ms | Allocations: 223)
+Completed 200 OK in 15ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 2399)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mBid Destroy (0.4ms)[0m  [1m[31mDELETE FROM "bids"[0m
+  [1m[36mAuction Destroy (0.3ms)[0m  [1m[31mDELETE FROM "auctions"[0m
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "js@winterfell.gov"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "js@winterfell.gov"], ["password_digest", "$2a$12$VeZHTRtT2IDBv5HicN6GFORzz8M4Bhz3KeM.CWAZglmH//Ja.tTim"], ["created_at", "2021-08-27 16:46:41.493517"], ["updated_at", "2021-08-27 16:46:41.493517"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "malisa.wilkinson@erdman.biz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "malisa.wilkinson@erdman.biz"], ["password_digest", "$2a$12$mo.kJyoyybaADfA/OW7PPuU1CtXr7M3MY/0OL3iqdnZE5LQqfkkvS"], ["created_at", "2021-08-27 16:46:42.944231"], ["updated_at", "2021-08-27 16:46:42.944231"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kieth.spinka@watsica.io"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "kieth.spinka@watsica.io"], ["password_digest", "$2a$12$W23ziHTBd2W1L/SqdABaY.vT5E7y1KyDPzbAS3kdkjpUZFCtlvRui"], ["created_at", "2021-08-27 16:46:43.134345"], ["updated_at", "2021-08-27 16:46:43.134345"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ronald.schimmel@blick.net"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "ronald.schimmel@blick.net"], ["password_digest", "$2a$12$hJJy70Fnv/8XvRGNMbEza.vvNDZc4gP4CL6PcD1ufeaBOkWaB5V4S"], ["created_at", "2021-08-27 16:46:43.329226"], ["updated_at", "2021-08-27 16:46:43.329226"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dorris_rau@nienow.info"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "dorris_rau@nienow.info"], ["password_digest", "$2a$12$lod1vMbaA0untFkLhCud4OEdw4hIzOL0VsrlhcSgedVH6C1drhILW"], ["created_at", "2021-08-27 16:46:43.504620"], ["updated_at", "2021-08-27 16:46:43.504620"]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "rosamaria@wiegand.info"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "rosamaria@wiegand.info"], ["password_digest", "$2a$12$yOSJwLCsY.wx5iEnQ7mU8epCSRB8NillNVBaGq.HRFSuwbjCMBDMO"], ["created_at", "2021-08-27 16:46:43.677305"], ["updated_at", "2021-08-27 16:46:43.677305"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "dannie@prosacco.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "dannie@prosacco.com"], ["password_digest", "$2a$12$z1SCP7EJZi3ba8XVSdhPcuVy/4I3FepM4EwvYdzv7UDXC2ZYLtzZu"], ["created_at", "2021-08-27 16:46:43.848958"], ["updated_at", "2021-08-27 16:46:43.848958"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "ed@armstrong.biz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "ed@armstrong.biz"], ["password_digest", "$2a$12$bZR3T7JP0IHp0lpvza4L6O3V8X5aIsK1Wjb6967UVdQWaeVSqtRcu"], ["created_at", "2021-08-27 16:46:44.024833"], ["updated_at", "2021-08-27 16:46:44.024833"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "timothy@bode.name"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "timothy@bode.name"], ["password_digest", "$2a$12$47r7b4NEZOxxWNSTP4jnre2q3j59EH4Q6878PCapnePbpqxz/rxP."], ["created_at", "2021-08-27 16:46:44.202061"], ["updated_at", "2021-08-27 16:46:44.202061"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "kenna@luettgen-waelchi.org"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "kenna@luettgen-waelchi.org"], ["password_digest", "$2a$12$tneWEeiSleD5pfbp8IU/KuJp3.DyeJVaOU2LFIM2N3iOnx/GSN9By"], ["created_at", "2021-08-27 16:46:44.383023"], ["updated_at", "2021-08-27 16:46:44.383023"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "olinda@fritsch-vonrueden.biz"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["email", "olinda@fritsch-vonrueden.biz"], ["password_digest", "$2a$12$iGIe1tv5BH8v/RxCzfPS/eOzOC6kt.CeQX5Fz9Mlar/7Gm3A578wa"], ["created_at", "2021-08-27 16:46:44.557897"], ["updated_at", "2021-08-27 16:46:44.557897"]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Create (0.6ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Kimchi refrigerator"], ["description", "That's good. Go on, read some more."], ["end_date", "2021-10-13"], ["reserve_price", 668], ["created_at", "2021-08-17 00:00:00"], ["updated_at", "2021-08-17 00:00:00"], ["user_id", 8]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.6ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 632], ["auction_id", 1], ["created_at", "2021-08-27 16:46:44.602010"], ["updated_at", "2021-08-27 16:46:44.602010"], ["user_id", 5]]
+  [1m[36mBid Create (0.2ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 369], ["auction_id", 1], ["created_at", "2021-08-27 16:46:44.604869"], ["updated_at", "2021-08-27 16:46:44.604869"], ["user_id", 6]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Create (0.2ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Oil heater"], ["description", "Yes, it's tough, but not as tough as doing comedy."], ["end_date", "2021-09-07"], ["reserve_price", 565], ["created_at", "2021-08-15 00:00:00"], ["updated_at", "2021-08-15 00:00:00"], ["user_id", 2]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 2]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 512], ["auction_id", 2], ["created_at", "2021-08-27 16:46:44.612405"], ["updated_at", "2021-08-27 16:46:44.612405"], ["user_id", 3]]
+  [1m[36mBid Create (0.2ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 424], ["auction_id", 2], ["created_at", "2021-08-27 16:46:44.614556"], ["updated_at", "2021-08-27 16:46:44.614556"], ["user_id", 11]]
+  [1m[36mBid Create (0.2ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 384], ["auction_id", 2], ["created_at", "2021-08-27 16:46:44.615679"], ["updated_at", "2021-08-27 16:46:44.615679"], ["user_id", 6]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Create (0.2ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Sump pump"], ["description", "Goodnight, my darlings, I'll see you tomorrow."], ["end_date", "2021-09-04"], ["reserve_price", 373], ["created_at", "2021-08-13 00:00:00"], ["updated_at", "2021-08-13 00:00:00"], ["user_id", 10]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBid Load (0.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 3]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.2ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 359], ["auction_id", 3], ["created_at", "2021-08-27 16:46:44.621890"], ["updated_at", "2021-08-27 16:46:44.621890"], ["user_id", 2]]
+  [1m[36mBid Create (0.1ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 319], ["auction_id", 3], ["created_at", "2021-08-27 16:46:44.623786"], ["updated_at", "2021-08-27 16:46:44.623786"], ["user_id", 7]]
+  [1m[36mBid Create (0.1ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 359], ["auction_id", 3], ["created_at", "2021-08-27 16:46:44.624773"], ["updated_at", "2021-08-27 16:46:44.624773"], ["user_id", 3]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Create (0.2ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Clothes iron"], ["description", "Well, this is certainly a pleasant surprise."], ["end_date", "2021-09-07"], ["reserve_price", 876], ["created_at", "2021-08-13 00:00:00"], ["updated_at", "2021-08-13 00:00:00"], ["user_id", 5]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBid Load (0.2ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 4]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.2ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 702], ["auction_id", 4], ["created_at", "2021-08-27 16:46:44.630510"], ["updated_at", "2021-08-27 16:46:44.630510"], ["user_id", 7]]
+  [1m[36mBid Create (0.2ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 809], ["auction_id", 4], ["created_at", "2021-08-27 16:46:44.632321"], ["updated_at", "2021-08-27 16:46:44.632321"], ["user_id", 3]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Create (0.2ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Dishwasher"], ["description", "Am I dying, or is this my birthday?"], ["end_date", "2021-08-29"], ["reserve_price", 436], ["created_at", "2021-08-25 00:00:00"], ["updated_at", "2021-08-25 00:00:00"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBid Load (0.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 5]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.2ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 330], ["auction_id", 5], ["created_at", "2021-08-27 16:46:44.638834"], ["updated_at", "2021-08-27 16:46:44.638834"], ["user_id", 8]]
+  [1m[36mBid Create (0.2ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 328], ["auction_id", 5], ["created_at", "2021-08-27 16:46:44.640737"], ["updated_at", "2021-08-27 16:46:44.640737"], ["user_id", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Create (0.3ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Evaporative cooler"], ["description", "One! Two! Three!"], ["end_date", "2021-09-26"], ["reserve_price", 174], ["created_at", "2021-08-17 00:00:00"], ["updated_at", "2021-08-17 00:00:00"], ["user_id", 4]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBid Load (0.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 6]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.2ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 211], ["auction_id", 6], ["created_at", "2021-08-27 16:46:44.647371"], ["updated_at", "2021-08-27 16:46:44.647371"], ["user_id", 7]]
+  [1m[36mBid Create (0.2ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 266], ["auction_id", 6], ["created_at", "2021-08-27 16:46:44.649433"], ["updated_at", "2021-08-27 16:46:44.649433"], ["user_id", 11]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Create (0.2ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Tie press"], ["description", "Happy."], ["end_date", "2021-10-19"], ["reserve_price", 844], ["created_at", "2021-08-07 00:00:00"], ["updated_at", "2021-08-07 00:00:00"], ["user_id", 11]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBid Load (0.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 7]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.2ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 836], ["auction_id", 7], ["created_at", "2021-08-27 16:46:44.655347"], ["updated_at", "2021-08-27 16:46:44.655347"], ["user_id", 2]]
+  [1m[36mBid Create (0.2ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 798], ["auction_id", 7], ["created_at", "2021-08-27 16:46:44.657063"], ["updated_at", "2021-08-27 16:46:44.657063"], ["user_id", 1]]
+  [1m[36mBid Create (0.1ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 828], ["auction_id", 7], ["created_at", "2021-08-27 16:46:44.658073"], ["updated_at", "2021-08-27 16:46:44.658073"], ["user_id", 2]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Create (0.2ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Fan heater"], ["description", "I want your bunk!"], ["end_date", "2021-09-05"], ["reserve_price", 47], ["created_at", "2021-08-22 00:00:00"], ["updated_at", "2021-08-22 00:00:00"], ["user_id", 8]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBid Load (0.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 8]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.2ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 269], ["auction_id", 8], ["created_at", "2021-08-27 16:46:44.664275"], ["updated_at", "2021-08-27 16:46:44.664275"], ["user_id", 2]]
+  [1m[36mBid Create (0.1ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 273], ["auction_id", 8], ["created_at", "2021-08-27 16:46:44.666202"], ["updated_at", "2021-08-27 16:46:44.666202"], ["user_id", 7]]
+  [1m[36mBid Create (0.3ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 55], ["auction_id", 8], ["created_at", "2021-08-27 16:46:44.667190"], ["updated_at", "2021-08-27 16:46:44.667190"], ["user_id", 1]]
+  [1m[36mBid Create (0.2ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 263], ["auction_id", 8], ["created_at", "2021-08-27 16:46:44.668383"], ["updated_at", "2021-08-27 16:46:44.668383"], ["user_id", 3]]
+  [1m[36mBid Create (0.2ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 106], ["auction_id", 8], ["created_at", "2021-08-27 16:46:44.669596"], ["updated_at", "2021-08-27 16:46:44.669596"], ["user_id", 8]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Create (0.2ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Central vacuum cleaner"], ["description", "No comment."], ["end_date", "2021-10-08"], ["reserve_price", 462], ["created_at", "2021-08-02 00:00:00"], ["updated_at", "2021-08-02 00:00:00"], ["user_id", 7]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBid Load (0.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 9]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.2ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 444], ["auction_id", 9], ["created_at", "2021-08-27 16:46:44.676000"], ["updated_at", "2021-08-27 16:46:44.676000"], ["user_id", 1]]
+  [1m[36mBid Create (0.2ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 365], ["auction_id", 9], ["created_at", "2021-08-27 16:46:44.677861"], ["updated_at", "2021-08-27 16:46:44.677861"], ["user_id", 4]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mAuction Create (0.2ms)[0m  [1m[32mINSERT INTO "auctions" ("title", "description", "end_date", "reserve_price", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Oil heater"], ["description", "I want your bunk!"], ["end_date", "2021-10-01"], ["reserve_price", 456], ["created_at", "2021-08-24 00:00:00"], ["updated_at", "2021-08-24 00:00:00"], ["user_id", 10]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mBid Load (0.1ms)[0m  [1m[34mSELECT "bids".* FROM "bids" WHERE "bids"."auction_id" = $1[0m  [["auction_id", 10]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBid Create (0.2ms)[0m  [1m[32mINSERT INTO "bids" ("amount", "auction_id", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["amount", 353], ["auction_id", 10], ["created_at", "2021-08-27 16:46:44.683202"], ["updated_at", "2021-08-27 16:46:44.683202"], ["user_id", 7]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "auctions"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "bids"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "users"[0m
