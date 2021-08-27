@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import WelcomePage from './components/WelcomePage';
+import AuctionIndexPage from './components/AuctionIndexPage';
+import NavBar from './components/NavBar';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Session } from './requests';
 import './App.css';
 
@@ -28,7 +31,15 @@ class App extends Component {
     render() {
         return (
             <div className="container">
-              <WelcomePage/>
+                <BrowserRouter>
+                    <NavBar />
+                    <Switch>
+                        <Route exact path="/" component={WelcomePage}/>
+                        <Route exact path="/auctions">
+                            <AuctionIndexPage />
+                        </Route>
+                    </Switch>
+                </BrowserRouter>
             </div>
         )
     }
