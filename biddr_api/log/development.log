@@ -2000,3 +2000,1084 @@ Started GET "/" for ::1 at 2021-08-27 21:16:35 -0400
 ActionController::RoutingError (uninitialized constant AuctionsController
 Did you mean?  ActionController):
   
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 21:21:31 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (0.8ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.8ms | Allocations: 2168)
+
+
+Started GET "/api/v1/auctions/22" for ::1 at 2021-08-27 21:21:32 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"22"}
+  [1m[36mAuction Load (0.5ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 954)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 21:21:35 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (0.8ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 0.8ms | Allocations: 2169)
+
+
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:21:36 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+  [1m[36mAuction Load (0.5ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 954)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 21:21:38 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (1.1ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.8ms | ActiveRecord: 1.1ms | Allocations: 2169)
+
+
+Started GET "/api/v1/auctions/26" for ::1 at 2021-08-27 21:21:39 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"26"}
+  [1m[36mAuction Load (0.5ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 954)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 21:21:40 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (0.7ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.5ms | ActiveRecord: 0.7ms | Allocations: 2169)
+
+
+Started GET "/api/v1/auctions/27" for ::1 at 2021-08-27 21:21:41 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"27"}
+  [1m[36mAuction Load (0.6ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 954)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 21:21:42 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (1.0ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 1.0ms | Allocations: 2169)
+
+
+Started GET "/api/v1/auctions/28" for ::1 at 2021-08-27 21:21:43 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"28"}
+  [1m[36mAuction Load (0.9ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.9ms | Allocations: 953)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 21:21:44 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (0.7ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.7ms | Allocations: 2169)
+
+
+Started GET "/api/v1/auctions/30" for ::1 at 2021-08-27 21:21:45 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"30"}
+  [1m[36mAuction Load (0.6ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 953)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 21:21:47 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (0.8ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.6ms | ActiveRecord: 0.8ms | Allocations: 2169)
+
+
+Started GET "/api/v1/auctions/29" for ::1 at 2021-08-27 21:21:48 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"29"}
+  [1m[36mAuction Load (0.5ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 953)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 21:21:50 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (1.2ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 1.2ms | Allocations: 2169)
+
+
+Started GET "/api/v1/auctions/21" for ::1 at 2021-08-27 21:21:51 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"21"}
+  [1m[36mAuction Load (1.5ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 953)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 21:21:52 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (0.8ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.8ms | Allocations: 2169)
+
+
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:21:53 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+  [1m[36mAuction Load (1.0ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 1.0ms | Allocations: 954)
+
+
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:23:18 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:23:18 -0400
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 281)
+
+
+  [1m[36mAuction Load (3.0ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 12ms (Views: 0.3ms | ActiveRecord: 3.0ms | Allocations: 3786)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:23:18 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:25:14 -0400
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:25:14 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 281)
+
+
+  [1m[36mAuction Load (1.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 1.4ms | Allocations: 1756)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:25:14 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:25:18 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:25:18 -0400
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 281)
+
+
+  [1m[36mAuction Load (1.9ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 1.9ms | Allocations: 2236)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:25:18 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:25:21 -0400
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:25:21 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 403)
+
+
+  [1m[36mAuction Load (2.5ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 8ms (Views: 1.1ms | ActiveRecord: 2.5ms | Allocations: 1855)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:25:21 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:25:33 -0400
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:25:33 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 281)
+
+
+  [1m[36mAuction Load (1.8ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 1.8ms | Allocations: 1748)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:25:33 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:26:55 -0400
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:26:55 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 281)
+
+
+  [1m[36mAuction Load (2.5ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 2.5ms | Allocations: 2084)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:26:55 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:30:47 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+  [1m[36mAuction Load (0.7ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 16ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 954)
+
+
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:30:51 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+  [1m[36mAuction Load (0.6ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 954)
+
+
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:30:54 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+  [1m[36mAuction Load (4.2ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 4.2ms | Allocations: 954)
+
+
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:30:59 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+  [1m[36mAuction Load (1.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 7ms (Views: 1.1ms | ActiveRecord: 1.4ms | Allocations: 954)
+
+
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:31:01 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:31:01 -0400
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 402)
+
+
+  [1m[36mAuction Load (3.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 3.4ms | Allocations: 2124)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:31:01 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:33:52 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+  [1m[36mAuction Load (0.5ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 953)
+
+
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:33:52 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:33:52 -0400
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 0ms (ActiveRecord: 0.0ms | Allocations: 281)
+
+
+  [1m[36mAuction Load (1.5ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 2595)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:33:52 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:34:07 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+  [1m[36mAuction Load (1.0ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 953)
+
+
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:35:31 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+  [1m[36mAuction Load (1.0ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 954)
+
+
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:35:44 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+  [1m[36mAuction Load (4.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 14ms (Views: 0.5ms | ActiveRecord: 4.4ms | Allocations: 954)
+
+
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:35:46 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:35:46 -0400
+  [1m[36mAuction Load (2.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+Processing by Api::V1::UsersController#current as JSON
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 2.4ms | Allocations: 2531)
+
+
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 849)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:35:46 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:35:56 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+  [1m[36mAuction Load (0.7ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 13ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 953)
+
+
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:35:57 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+  [1m[36mAuction Load (0.6ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.6ms | Allocations: 954)
+
+
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:38:55 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+  [1m[36mAuction Load (0.4ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 954)
+
+
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:38:56 -0400
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:38:56 -0400
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 760)
+
+
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+  [1m[36mAuction Load (0.6ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 15ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 1185)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:38:56 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:38:57 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:38:57 -0400
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 281)
+
+
+  [1m[36mAuction Load (0.5ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 2493)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:38:57 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:39:54 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+  [1m[36mAuction Load (2.3ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 34ms (Views: 0.7ms | ActiveRecord: 2.3ms | Allocations: 954)
+
+
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:48:54 -0400
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:48:54 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+Processing by Api::V1::UsersController#current as JSON
+  Parameters: {"id"=>"24"}
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (Allocations: 628)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:48:54 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+  [1m[36mAuction Load (0.7ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 67ms (Views: 0.3ms | ActiveRecord: 49.8ms | Allocations: 61591)
+
+
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 21:49:14 -0400
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:49:14 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 281)
+
+
+  [1m[36mAuction Load (0.6ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 1742)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:49:14 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 21:51:47 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (0.9ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.9ms | Allocations: 2168)
+
+
+Started GET "/api/v1/auctions/21" for ::1 at 2021-08-27 21:51:48 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"21"}
+  [1m[36mAuction Load (1.1ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 1.1ms | Allocations: 953)
+
+
+Started POST "/api/v1/session" for ::1 at 2021-08-27 21:51:59 -0400
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"js@winterfell.gov", "password"=>"[FILTERED]", "session"=>{"email"=>"js@winterfell.gov", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "js@winterfell.gov"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3:in `create'
+Completed 200 OK in 190ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 5129)
+
+
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:52:00 -0400
+Processing by Api::V1::UsersController#current as JSON
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 21:52:00 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 2880)
+
+
+  [1m[36mAuction Load (1.1ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 19ms (Views: 2.3ms | ActiveRecord: 10.5ms | Allocations: 6452)
+
+
+Started GET "/api/v1/auctions/22" for ::1 at 2021-08-27 21:52:01 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"22"}
+  [1m[36mAuction Load (0.8ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 1124)
+
+
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 22:09:42 -0400
+Started GET "/api/v1/auctions/new" for ::1 at 2021-08-27 22:09:42 -0400
+  
+AbstractController::ActionNotFound (The action 'new' could not be found for Api::V1::AuctionsController
+Did you mean?  show
+               index
+               create
+               user_signed_in?):
+  
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.2) lib/mini_profiler/profiler.rb:384:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (5.4.2) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.4.0) lib/puma/configuration.rb:249:in `call'
+puma (5.4.0) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.4.0) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.4.0) lib/puma/request.rb:76:in `handle_request'
+puma (5.4.0) lib/puma/server.rb:440:in `process_client'
+puma (5.4.0) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Processing by Api::V1::UsersController#current as JSON
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 9.7ms | Allocations: 13015)
+
+
+Started GET "/api/v1/auctions/new" for ::1 at 2021-08-27 22:09:49 -0400
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 22:09:49 -0400
+Processing by Api::V1::UsersController#current as JSON
+  
+AbstractController::ActionNotFound (The action 'new' could not be found for Api::V1::AuctionsController
+Did you mean?  show
+               index
+               create
+               user_signed_in?):
+  
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.2) lib/mini_profiler/profiler.rb:384:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (5.4.2) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.4.0) lib/puma/configuration.rb:249:in `call'
+puma (5.4.0) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.4.0) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.4.0) lib/puma/request.rb:76:in `handle_request'
+puma (5.4.0) lib/puma/server.rb:440:in `process_client'
+puma (5.4.0) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+Completed 200 OK in 56ms (Views: 0.4ms | ActiveRecord: 1.8ms | Allocations: 31824)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 22:10:00 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (1.2ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.7ms | ActiveRecord: 1.2ms | Allocations: 2232)
+
+
+Started GET "/api/v1/auctions/21" for ::1 at 2021-08-27 22:10:01 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"21"}
+  [1m[36mAuction Load (0.8ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 957)
+
+
+Started GET "/api/v1/auctions/new" for ::1 at 2021-08-27 22:10:16 -0400
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 22:10:16 -0400
+  
+AbstractController::ActionNotFound (The action 'new' could not be found for Api::V1::AuctionsController
+Did you mean?  show
+               index
+               create
+               user_signed_in?):
+  
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.2) lib/mini_profiler/profiler.rb:384:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (5.4.2) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.4.0) lib/puma/configuration.rb:249:in `call'
+puma (5.4.0) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.4.0) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.4.0) lib/puma/request.rb:76:in `handle_request'
+puma (5.4.0) lib/puma/server.rb:440:in `process_client'
+puma (5.4.0) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Processing by Api::V1::UsersController#current as JSON
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 1.6ms | Allocations: 3218)
+
+
+Started GET "/api/v1/auctions/new" for ::1 at 2021-08-27 22:11:04 -0400
+  
+AbstractController::ActionNotFound (The action 'new' could not be found for Api::V1::AuctionsController
+Did you mean?  show
+               index
+               create
+               user_signed_in?):
+  
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.2) lib/mini_profiler/profiler.rb:384:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (5.4.2) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.4.0) lib/puma/configuration.rb:249:in `call'
+puma (5.4.0) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.4.0) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.4.0) lib/puma/request.rb:76:in `handle_request'
+puma (5.4.0) lib/puma/server.rb:440:in `process_client'
+puma (5.4.0) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 22:11:04 -0400
+Processing by Api::V1::UsersController#current as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 3203)
+
+
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 22:11:12 -0400
+Started GET "/api/v1/auctions/new" for ::1 at 2021-08-27 22:11:12 -0400
+Processing by Api::V1::UsersController#current as JSON
+  
+AbstractController::ActionNotFound (The action 'new' could not be found for Api::V1::AuctionsController
+Did you mean?  show
+               index
+               create
+               user_signed_in?):
+  
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.2) lib/mini_profiler/profiler.rb:384:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (5.4.2) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.4.0) lib/puma/configuration.rb:249:in `call'
+puma (5.4.0) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.4.0) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.4.0) lib/puma/request.rb:76:in `handle_request'
+puma (5.4.0) lib/puma/server.rb:440:in `process_client'
+puma (5.4.0) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+Completed 200 OK in 59ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 32674)
+
+
+Started GET "/api/v1/auctions/new" for ::1 at 2021-08-27 22:11:13 -0400
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 22:11:13 -0400
+  
+AbstractController::ActionNotFound (The action 'new' could not be found for Api::V1::AuctionsController
+Did you mean?  show
+               index
+               create
+               user_signed_in?):
+  
+actionpack (6.1.4.1) lib/abstract_controller/base.rb:160:in `process'
+actionview (6.1.4.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.1.4.1) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.1.4.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.1.4.1) lib/action_dispatch/routing/route_set.rb:842:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/permissions_policy.rb:22:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (6.1.4.1) lib/active_record/migration.rb:601:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.1.4.1) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.1.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `block in tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:37:in `tagged'
+activesupport (6.1.4.1) lib/active_support/tagged_logging.rb:99:in `tagged'
+railties (6.1.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/request_id.rb:26:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.1.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/static.rb:24:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.1.4.1) lib/action_dispatch/middleware/host_authorization.rb:98:in `call'
+rack-mini-profiler (2.3.2) lib/mini_profiler/profiler.rb:384:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (5.4.2) lib/webpacker/dev_server_proxy.rb:25:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.1.4.1) lib/rails/engine.rb:539:in `call'
+puma (5.4.0) lib/puma/configuration.rb:249:in `call'
+puma (5.4.0) lib/puma/request.rb:77:in `block in handle_request'
+puma (5.4.0) lib/puma/thread_pool.rb:340:in `with_force_shutdown'
+puma (5.4.0) lib/puma/request.rb:76:in `handle_request'
+puma (5.4.0) lib/puma/server.rb:440:in `process_client'
+puma (5.4.0) lib/puma/thread_pool.rb:147:in `block in spawn_thread'
+Processing by Api::V1::UsersController#current as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 2525)
+
+
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 22:11:39 -0400
+Processing by Api::V1::UsersController#current as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1074)
+
+
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 22:11:56 -0400
+Processing by Api::V1::UsersController#current as JSON
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 1073)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 22:11:58 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (0.7ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.7ms | Allocations: 2169)
+
+
+Started GET "/api/v1/auctions/21" for ::1 at 2021-08-27 22:11:59 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"21"}
+  [1m[36mAuction Load (0.8ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.8ms | Allocations: 954)
+
+
+Started POST "/api/v1/auctions" for ::1 at 2021-08-27 22:12:11 -0400
+Processing by Api::V1::AuctionsController#create as JSON
+  Parameters: {"title"=>"asss", "description"=>"fffdaaa", "auction"=>{"title"=>"asss", "description"=>"fffdaaa"}}
+No template found for Api::V1::AuctionsController#create, rendering head :no_content
+Completed 204 No Content in 4ms (ActiveRecord: 0.0ms | Allocations: 2013)
+
+
+Started DELETE "/api/v1/session" for ::1 at 2021-08-27 22:13:31 -0400
+Processing by Api::V1::SessionsController#destroy as JSON
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 263)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 22:13:35 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (0.9ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 6ms (Views: 3.4ms | ActiveRecord: 0.9ms | Allocations: 2169)
+
+
+Started GET "/api/v1/auctions/24" for ::1 at 2021-08-27 22:13:38 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"24"}
+  [1m[36mAuction Load (0.6ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 954)
+
+
+Started POST "/api/v1/session" for ::1 at 2021-08-27 22:13:53 -0400
+Processing by Api::V1::SessionsController#create as JSON
+  Parameters: {"email"=>"js@winterfell.gov", "password"=>"[FILTERED]", "session"=>{"email"=>"js@winterfell.gov", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "js@winterfell.gov"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/sessions_controller.rb:3:in `create'
+Completed 200 OK in 174ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 987)
+
+
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 22:13:53 -0400
+Processing by Api::V1::UsersController#current as JSON
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 22:13:53 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4:in `current_user'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 1.2ms | Allocations: 2959)
+
+
+  [1m[36mAuction Load (1.0ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 19ms (Views: 2.3ms | ActiveRecord: 7.5ms | Allocations: 6427)
+
+
+Started POST "/api/v1/auctions" for ::1 at 2021-08-27 22:14:04 -0400
+Processing by Api::V1::AuctionsController#create as JSON
+  Parameters: {"title"=>"asss", "description"=>"big bueaty", "auction"=>{"title"=>"asss", "description"=>"big bueaty"}}
+No template found for Api::V1::AuctionsController#create, rendering head :no_content
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 189)
+
+
+Started POST "/api/v1/auctions" for ::1 at 2021-08-27 22:14:59 -0400
+Processing by Api::V1::AuctionsController#create as JSON
+  Parameters: {"title"=>"asss", "description"=>"big bueaty", "end_date"=>"2021-08-31", "reserve_price"=>"1000", "auction"=>{"title"=>"asss", "description"=>"big bueaty", "end_date"=>"2021-08-31", "reserve_price"=>"1000"}}
+No template found for Api::V1::AuctionsController#create, rendering head :no_content
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 188)
+
+

@@ -19,19 +19,7 @@ class App extends Component {
     }
   
     componentDidMount() {
-        // Session.create({
-        //     email: 'js@winterfell.gov',
-        //     password: 'supersecret'
-        // })
-        // .then(current_user => {
-        //     this.setState((state) => {
-        //         return{
-        //             user: current_user
-        //         }
-        //     })
-        // })
         this.getCurrentUser()
-
     }
 
     getCurrentUser = () => {
@@ -63,7 +51,7 @@ class App extends Component {
                         <Route exact path="/auctions">
                             <AuctionIndexPage />
                         </Route>
-                        <Route exact path="auctions/new" component={NewAuctionPage} />
+                        <Route exact path="/auctions/new" component={NewAuctionPage} />
                         <Route path='/auctions/:id' component={AuctionShowPage} />
                     </Switch>
                 </BrowserRouter>

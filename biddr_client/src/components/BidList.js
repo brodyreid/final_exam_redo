@@ -2,7 +2,7 @@ import React from 'react';
 import BidDetails from './BidDetails';
 
 const BidList = (props, deleteBid) => {
-    console.log(`${props.bids}`)
+    console.log(`bidsss?${props.bids}`)
     const bids = props.bids
 
     return(
@@ -19,7 +19,7 @@ const BidList = (props, deleteBid) => {
                         />
                 })
                 :
-                null
+                <p>ass</p>
             }
         </div>
     )

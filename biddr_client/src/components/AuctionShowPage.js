@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import { AuctionDetails } from './AuctionDetails';
 import BidList from './BidList';
 import { Auction } from '../requests';
@@ -7,7 +7,7 @@ class AuctionShowPage extends Component {
     constructor(props){
         super(props)
         this.state = { auction: {} }
-        this.deleteAuction = this.deleteAuction.bind(this)
+        this.deleteBid = this.deleteBid.bind(this)
     }
   
     componentDidMount(){
@@ -21,7 +21,7 @@ class AuctionShowPage extends Component {
         })
     }
   
-    deleteAuction(id) {
+    deleteBid(id) {
       this.setState((state) => {
         return {
           bids: this.state.bids.filter(b => b.id !== id)
@@ -30,8 +30,8 @@ class AuctionShowPage extends Component {
     }
   
     render() {
-        console.log('auction show page rendered');
         const {title, description, end_date, reserve_price, created_at} = this.state.auction
+        console.log(this.state.auction);
         return(
             <main>
                 <AuctionDetails 
