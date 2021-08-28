@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import WelcomePage from './components/WelcomePage';
 import AuctionIndexPage from './components/AuctionIndexPage';
+import AuctionShowPage from './components/AuctionShowPage';
 import NewAuctionPage from './components/NewAuctionPage';
 import SignInPage from './components/SignInPage';
 import NavBar from './components/NavBar';
@@ -63,6 +64,7 @@ class App extends Component {
                             <AuctionIndexPage />
                         </Route>
                         <Route exact path="auctions/new" component={NewAuctionPage} />
+                        <Route path='/auctions/:id' component={AuctionShowPage} />
                     </Switch>
                 </BrowserRouter>
             </div>

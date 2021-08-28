@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Auction } from '../requests';
+import { Link } from 'react-router-dom';
 
 class AuctionIndexPage extends Component {
 
@@ -36,7 +37,7 @@ class AuctionIndexPage extends Component {
                     this.state.auctions.map(a => {
                         return(
                             <div key={a.id}>
-                                <h1>{a.id} - {a.title}</h1>
+                                <Link to={`/auctions/${a.id}`}><h1>{a.id} - {a.title}</h1></Link>
                                 <button onClick={() => this.deleteAuction(a.id)}>Delete</button>
                             </div>
                         )

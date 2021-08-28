@@ -1723,3 +1723,280 @@ Processing by Api::V1::SessionsController#destroy as JSON
 Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 265)
 
 
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:07:47 -0400
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 21:07:47 -0400
+Processing by Api::V1::UsersController#current as JSON
+Processing by Api::V1::AuctionsController#index as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 5ms (Allocations: 1874)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:07:47 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+  [1m[36mAuction Load (1.1ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 81ms (Views: 6.6ms | ActiveRecord: 10.4ms | Allocations: 66121)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 21:07:59 -0400
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:07:59 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 281)
+
+
+  [1m[36mAuction Load (0.9ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 13ms (Views: 2.4ms | ActiveRecord: 0.9ms | Allocations: 3321)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:07:59 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 21:08:14 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (0.7ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.7ms | Allocations: 2168)
+
+
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:08:18 -0400
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 281)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:08:18 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:09:59 -0400
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 281)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:09:59 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:10:16 -0400
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 281)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:10:16 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 21:10:19 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (1.2ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.1ms | ActiveRecord: 1.2ms | Allocations: 2169)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 21:10:21 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (0.7ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.7ms | Allocations: 2169)
+
+
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:12:56 -0400
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 281)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:12:56 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 21:13:29 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (0.6ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.6ms | Allocations: 2168)
+
+
+Started GET "/api/v1/auctions" for ::1 at 2021-08-27 21:13:32 -0400
+Processing by Api::V1::AuctionsController#index as JSON
+  [1m[36mAuction Load (0.8ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" ORDER BY "auctions"."id" ASC[0m
+  ↳ app/controllers/api/v1/auctions_controller.rb:6:in `index'
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.8ms | Allocations: 2169)
+
+
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:15:03 -0400
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 281)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:15:03 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:15:07 -0400
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 281)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:15:08 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:15:13 -0400
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 281)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:15:13 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/auctions/25" for ::1 at 2021-08-27 21:16:13 -0400
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:16:13 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"25"}
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 281)
+
+
+  [1m[36mAuction Load (0.7ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 2063)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:16:13 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/auctions/25" for ::1 at 2021-08-27 21:16:15 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"25"}
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:16:15 -0400
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 281)
+
+
+  [1m[36mAuction Load (1.3ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 29ms (Views: 0.5ms | ActiveRecord: 1.3ms | Allocations: 3786)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:16:15 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/auctions/25" for ::1 at 2021-08-27 21:16:24 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"25"}
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:16:24 -0400
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 281)
+
+
+  [1m[36mAuction Load (0.7ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 10ms (Views: 0.6ms | ActiveRecord: 0.7ms | Allocations: 2229)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:16:24 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/auctions/25" for ::1 at 2021-08-27 21:16:26 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"25"}
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:16:26 -0400
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms | Allocations: 593)
+
+
+  [1m[36mAuction Load (1.6ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 1.6ms | Allocations: 2408)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:16:26 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/auctions/25" for ::1 at 2021-08-27 21:16:29 -0400
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:16:29 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"25"}
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 281)
+
+
+  [1m[36mAuction Load (1.5ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 1.5ms | Allocations: 2096)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:16:29 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
+Started GET "/api/v1/auctions/25" for ::1 at 2021-08-27 21:16:35 -0400
+Started GET "/api/v1/users/current" for ::1 at 2021-08-27 21:16:35 -0400
+Processing by Api::V1::AuctionsController#show as JSON
+  Parameters: {"id"=>"25"}
+Processing by Api::V1::UsersController#current as JSON
+Redirected to http://localhost:3000/
+Filter chain halted as :authenticate_user! rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms | Allocations: 412)
+
+
+  [1m[36mAuction Load (1.6ms)[0m  [1m[34mSELECT "auctions".* FROM "auctions" WHERE "auctions"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/auctions_controller.rb:22:in `find_auction'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 1.6ms | Allocations: 1847)
+
+
+Started GET "/" for ::1 at 2021-08-27 21:16:35 -0400
+  
+ActionController::RoutingError (uninitialized constant AuctionsController
+Did you mean?  ActionController):
+  
