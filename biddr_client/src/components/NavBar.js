@@ -20,9 +20,9 @@ const NavBar = ({ currentUser, onSignOut }) => {
         { currentUser ? (
             <React.Fragment> 
                 <NavLink to='/auctions/new'>New Auction</NavLink>
-                -
-                <span>Welcome, {currentUser.first_name}</span>
-                -
+                |
+                <span>Welcome, {currentUser.name}</span>
+                |
                 <button onClick={handleSignOut}>Sign Out</button>
             </React.Fragment>
         ) : (

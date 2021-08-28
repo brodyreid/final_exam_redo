@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import WelcomePage from './components/WelcomePage';
 import AuctionIndexPage from './components/AuctionIndexPage';
+import NewAuctionPage from './components/NewAuctionPage';
 import SignInPage from './components/SignInPage';
 import NavBar from './components/NavBar';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Session } from './requests';
+import { User } from './requests';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 
@@ -17,16 +18,34 @@ class App extends Component {
     }
   
     componentDidMount() {
-        Session.create({
-            email: 'js@winterfell.gov',
-            password: 'supersecret'
+        // Session.create({
+        //     email: 'js@winterfell.gov',
+        //     password: 'supersecret'
+        // })
+        // .then(current_user => {
+        //     this.setState((state) => {
+        //         return{
+        //             user: current_user
+        //         }
+        //     })
+        // })
+        this.getCurrentUser()
+
+    }
+
+    getCurrentUser = () => {
+        return User.current().then(user => {
+            if (user?.id) {
+                this.setState(state => {
+                    return {user}
+                })
+            }
         })
-        .then(current_user => {
-            this.setState((state) => {
-                return{
-                    user: current_user
-                }
-            })
+    }
+
+    onSignOut = () => {
+        this.setState({
+            user: null
         })
     }
   
@@ -34,13 +53,16 @@ class App extends Component {
         return (
             <div className="container">
                 <BrowserRouter>
-                    <NavBar />
+                    <NavBar currentUser={this.state.user} onSignOut={this.onSignOut} />
                     <Switch>
                         <Route exact path="/" component={WelcomePage}/>
-                        <Route exact path="/sign_in" component={SignInPage} />
+                        <Route exact
+                        path="/sign_in"
+                        render={(routeProps) => <SignInPage {...routeProps} onSignIn={this.getCurrentUser}/> }/>
                         <Route exact path="/auctions">
                             <AuctionIndexPage />
                         </Route>
+                        <Route exact path="auctions/new" component={NewAuctionPage} />
                     </Switch>
                 </BrowserRouter>
             </div>

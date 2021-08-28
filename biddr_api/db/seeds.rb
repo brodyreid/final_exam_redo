@@ -13,12 +13,14 @@ Auction.delete_all
 User.delete_all
 
 super_user = User.create(
+    name: "Jon Snow",
     email: "js@winterfell.gov",
     password: PASSWORD
 )
 
 10.times do
     User.create(
+        name: Faker::Name.name,
         email: Faker::Internet.email,
         password: PASSWORD
     )
